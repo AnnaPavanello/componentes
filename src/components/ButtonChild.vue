@@ -1,10 +1,11 @@
 <script setup>
     defineProps(['nome', 'tipo', 'acao'])
+    const emit = defineEmits(['clique'])
 </script>
 
 <template>
-    <button :class="[tipo, acao]">
-        {{ nome }}
+    <button :class="[tipo, acao]" @click.prevent="$emit('clique', nome)">
+        <slot></slot>
     </button>
 </template>
 
@@ -20,6 +21,10 @@
 }
 .btn-novo{
   background-color: aqua;
+  color: black;
+}
+.btn-editar{
+  background-color: yellow;
   color: black;
 }
 </style>

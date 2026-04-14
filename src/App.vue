@@ -1,5 +1,9 @@
 <script setup>
 import ButtonChild from './components/ButtonChild.vue';
+
+function mensagemBotao(texto){
+  alert(`O botão clicado foi ${texto}!`)
+}
 </script>
 
 <template>
@@ -12,7 +16,12 @@ import ButtonChild from './components/ButtonChild.vue';
     <button class="btn btn-excluir">Excluir</button>
   </div>
   <div>
-    <ButtonChild :tipo="'btn'" :acao="'btn-novo'">Novo</ButtonChild>
+    <ButtonChild :tipo="'btn'" :acao="'btn-novo'" :nome="'Novo'" @clique="mensagemBotao">Novo</ButtonChild>
+    <ButtonChild :tipo="'btn'" :acao="'btn-editar'" :nome="'Editar'" @clique="mensagemBotao">Editar</ButtonChild>
+    <ButtonChild :tipo="'btn'" :acao="'btn-salvar'" :nome="'Salvar'" @clique="mensagemBotao">Salvar</ButtonChild>
+    <ButtonChild :tipo="'btn'" :acao="'btn-cancelar'" :nome="'Cancelar'" @clique="mensagemBotao">Cancelar</ButtonChild>
+    <ButtonChild :tipo="'btn'" :acao="'btn-excluir'" :nome="'Excluir'" @clique="mensagemBotao">Excluir</ButtonChild>
+
   </div>
 </div>
 </template>
