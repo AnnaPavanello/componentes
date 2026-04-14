@@ -12,7 +12,7 @@ import ButtonChild from './components/ButtonChild.vue';
     <button class="btn btn-excluir">Excluir</button>
   </div>
   <div>
-    <ButtonChild :nome="'Novo'" :tipo="'btn'" :acao="'btn-novo'"></ButtonChild>
+    <ButtonChild :tipo="'btn'" :acao="'btn-novo'">Novo</ButtonChild>
   </div>
 </div>
 </template>
